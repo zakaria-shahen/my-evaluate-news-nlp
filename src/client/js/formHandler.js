@@ -24,8 +24,7 @@ function handleSubmit(event) {
                 return
             }
 
-            results.innerHTML = res.status.msg
-
+            alert(res.status.msg)
         });
 }
 
