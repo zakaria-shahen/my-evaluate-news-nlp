@@ -9,7 +9,14 @@ import "./styles/resets.scss"
 
 console.log(checkForName);
 
-alert("I EXIST");
 console.log("CHANGE!!");
+
+// if ("serviceWorker" in navigator){
+//     window.addEventListener("load", () => 
+//         navigator.serviceWorker.register("/service-worker.js")
+//     )
+    
+// }
+
 
 export { checkForName, handleSubmit };
