@@ -1,16 +1,32 @@
 function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    Client.checkForName(formText)
+    let formText = document.getElementById("name").value;
+    Client.checkForName(formText);
 
-    console.log("::: Form Submitted :::")
-    fetch('http://localhost:8080/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })
+    console.log("::: Form Submitted :::");
+    fetch(`http://localhost:8081/test?url=${formText}`)
+        .then((res) => res.json())
+        .then((res) => {
+            const results = document.querySelector("#results")
+
+            if (res.status.msg === "OK") {
+                const fragment = document.createDocumentFragment()
+                const viewList = ["agreement", "confidence", "irony", "score_tag"]
+                viewList.map(key => {
+                    const p = document.createElement('p')
+                    p.innerHTML = `<strong>${key}:</strong> ${res[key]}`
+                    fragment.appendChild(p)
+                })
+                console.log(res)
+                results.appendChild(fragment);
+                return
+            }
+
+            results.innerHTML = res.status.msg
+
+        });
 }
 
-export { handleSubmit }
+export { handleSubmit };

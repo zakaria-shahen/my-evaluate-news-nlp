@@ -7,9 +7,9 @@ import "./styles/form.scss"
 import "./styles/header.scss"
 import "./styles/resets.scss"
 
-console.log(checkForName);
+// console.log(checkForName);
 
-console.log("CHANGE!!");
+// console.log("CHANGE!!");
 
 // if ("serviceWorker" in navigator){
 //     window.addEventListener("load", () => 
