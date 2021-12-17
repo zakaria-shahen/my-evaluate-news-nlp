@@ -21,7 +21,7 @@ function handleSubmit(event) {
                 })
                 console.log(res)
                 results.appendChild(fragment);
-                return
+                return fragment
             }
 
             alert(res.status.msg)
