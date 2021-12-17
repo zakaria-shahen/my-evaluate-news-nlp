@@ -20,6 +20,7 @@ function handleSubmit(event) {
                     fragment.appendChild(p)
                 })
                 console.log(res)
+                results.innerHTML = ''
                 results.appendChild(fragment);
                 return fragment
             }
