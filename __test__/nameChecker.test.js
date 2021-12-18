@@ -14,7 +14,7 @@ describe("checkForName(): ", () => {
     const inputWrong = ["zakaria", "omar", "github", "FWD"]
 
     it.each(input)("using alert/console.log arg %j", (a) => {
-        expect(nameChecker.checkForName(a)).toBeUndefined()
+        expect(nameChecker.checkForName(a)).toBeTruthy()
         expect(alert).toBeCalledTimes(1)
 
     })
